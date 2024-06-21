@@ -24,6 +24,6 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('login.urls')),
-    path('oauth/', include('social_django.urls', namespace='social')),
+    path('oauth/', include('social_django.urls', namespace='python_aweber_monday')),
 
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
