@@ -41,3 +41,11 @@ def home(request):
 def logout(request):
     logout(request)
     return redirect('login') 
+
+
+def privacy(request):
+    return render(request, 'privacy_policy.html')
+
+
+def terms(request):
+    return render(request, 'terms.html')
