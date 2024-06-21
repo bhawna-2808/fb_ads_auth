@@ -36,6 +36,8 @@ def home(request):
             pass
     
     return render(request, 'home.html')
+
+
 # def home(request):
 #     if request.user.is_authenticated:
 #         social = request.user.social_auth.get(provider='facebook')
