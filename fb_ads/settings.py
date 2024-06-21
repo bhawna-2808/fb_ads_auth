@@ -54,14 +54,12 @@ SOCIAL_AUTH_FACEBOOK_SECRET = '8655e554f9e52f24ee8ffdfe325d6878'  # App Secret
 # SOCIAL_AUTH_FACEBOOK_KEY = '834609135193634'  # App ID
 # SOCIAL_AUTH_FACEBOOK_SECRET = '85c64f9c4069841ad3121ecef249f1aa'  # App Secret
 
-# # Redirect URLs after login/logout
-# LOGIN_REDIRECT_URL = '/'  # Example: Redirect to home page
-# LOGOUT_REDIRECT_URL = '/'  # Example: Redirect to home page
+
 
 LOGIN_URL = 'login'
-LOGOUT_URL = 'logout'
 LOGIN_REDIRECT_URL = 'home'
-LOGOUT_REDIRECT_URL = 'logout'
+LOGOUT_URL = 'logout'
+LOGOUT_REDIRECT_URL = 'login'
 
 SOCIAL_AUTH_URL_NAMESPACE = 'social_fb_ads'
 

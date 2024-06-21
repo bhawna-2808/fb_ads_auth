@@ -1,41 +1,9 @@
-<!-- home.html -->
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Home Page</title>
-</head>
-<body>
-    <h1>Welcome, {{ request.user.username }}!</h1>
-    
-    {% if request.user.social_auth.exists %}
-        <h2>Social Authentication Information:</h2>
-        <ul>
-            {% for auth in request.user.social_auth.all %}
-                <li>Provider: {{ auth.provider }}</li>
-                <li>UID: {{ auth.uid }}</li>
-                <!-- Add other relevant information here -->
-            {% endfor %}
-        </ul>
-    {% else %}
-        <p>No social authentication linked.</p>
-    {% endif %}
-    
-    <!-- Example: Display user profile picture if available -->
-    {% if request.user.social_auth.exists %}
-        {% for auth in request.user.social_auth.all %}
-            {% if auth.provider == 'facebook' %}
-                <img src="https://graph.facebook.com/{{ auth.uid }}/picture?type=large" alt="Profile Picture">
-            {% endif %}
-            <!-- Add other providers as needed -->
-        {% endfor %}
-    {% endif %}
-    
-    <!-- Example: Logout link -->
-    <form action="{% url 'logout' %}" method="post">
-        {% csrf_token %}
-        <button type="submit">Logout</button>
-    </form>
-</body>
-</html>
+{% extends 'base.html' %} 
+    {% block title %} HOme {% endblock %} 
+    {% block content %} 
+        <div class="row">
+            <div class="col-sm-12 mb-3">
+                <h4 class="text-center">Welcome {{ user.username }}</h4>
+            </div>
+        </div>
+    {% endblock %} 
