@@ -2,6 +2,12 @@ from django.shortcuts import render, redirect
 from social_django.utils import load_strategy
 from social_django.models import UserSocialAuth
 
+from django.contrib.auth import logout as django_logout
+
+def logout_view(request):
+    django_logout(request)
+    # Redirect to a different page after logout
+    return redirect('home')  # Replace 'home' with your desired URL name or path
 
 def login(request):
     return render(request, 'login.html')
@@ -38,9 +44,9 @@ def home(request):
 #     return render(request, 'home.html')
 
 
-def logout(request):
-    logout(request)
-    return redirect('login') 
+# def logout(request):
+#     logout(request)
+#     return redirect('login') 
 
 
 def privacy(request):

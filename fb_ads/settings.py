@@ -47,21 +47,21 @@ AUTHENTICATION_BACKENDS = (
     'social_core.backends.facebook.FacebookOAuth2',
     
 )
-SOCIAL_AUTH_FACEBOOK_KEY = '488954697126384'  # App ID
-SOCIAL_AUTH_FACEBOOK_SECRET = '3438b734c7f15e9053908f3c505e29f6'  # App Secret
+SOCIAL_AUTH_FACEBOOK_KEY = '3735090270105511'  # App ID
+SOCIAL_AUTH_FACEBOOK_SECRET = 'c7810d6da79104906712b939171095c0'  # App Secret
 
 
 # SOCIAL_AUTH_FACEBOOK_KEY = '834609135193634'  # App ID
 # SOCIAL_AUTH_FACEBOOK_SECRET = '85c64f9c4069841ad3121ecef249f1aa'  # App Secret
 
-# Redirect URLs after login/logout
-LOGIN_REDIRECT_URL = '/'  # Example: Redirect to home page
-LOGOUT_REDIRECT_URL = '/'  # Example: Redirect to home page
+# # Redirect URLs after login/logout
+# LOGIN_REDIRECT_URL = '/'  # Example: Redirect to home page
+# LOGOUT_REDIRECT_URL = '/'  # Example: Redirect to home page
 
-# LOGIN_URL = 'login'
-# LOGOUT_URL = 'logout'
-# LOGIN_REDIRECT_URL = 'home'
-# LOGOUT_REDIRECT_URL = 'logout'
+LOGIN_URL = 'login'
+LOGOUT_URL = 'logout'
+LOGIN_REDIRECT_URL = 'home'
+LOGOUT_REDIRECT_URL = 'logout'
 
 SOCIAL_AUTH_URL_NAMESPACE = 'social_fb_ads'
 
