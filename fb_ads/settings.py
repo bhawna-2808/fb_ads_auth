@@ -61,7 +61,7 @@ LOGIN_REDIRECT_URL = 'home'
 LOGOUT_URL = 'logout'
 LOGOUT_REDIRECT_URL = 'login'
 
-SOCIAL_AUTH_URL_NAMESPACE = 'alfboss_leads'
+# SOCIAL_AUTH_URL_NAMESPACE = 'alfboss_leads'
 
 # Add this setting if you want to use email as the unique identifier
 SOCIAL_AUTH_FACEBOOK_SCOPE = ['read_insights,pages_show_list,ads_management,ads_read,leads_retrieval,pages_manage_ads']

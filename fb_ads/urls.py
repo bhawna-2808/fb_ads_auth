@@ -24,6 +24,6 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('login.urls')),
-    path('oauth/', include('social_django.urls', namespace='alfboss_leads')),
+    path('oauth/', include('social_django.urls')),
 
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
