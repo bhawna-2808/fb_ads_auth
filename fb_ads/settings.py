@@ -63,7 +63,7 @@ LOGOUT_REDIRECT_URL = '/'  # Example: Redirect to home page
 # LOGIN_REDIRECT_URL = 'home'
 # LOGOUT_REDIRECT_URL = 'logout'
 
-SOCIAL_AUTH_URL_NAMESPACE = 'social'
+SOCIAL_AUTH_URL_NAMESPACE = 'python_aweber_monday'
 
 # Add this setting if you want to use email as the unique identifier
 SOCIAL_AUTH_FACEBOOK_SCOPE = ['email']
