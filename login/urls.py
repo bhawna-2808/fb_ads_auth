@@ -10,5 +10,7 @@ urlpatterns = [
     path('login/', views.login, name='login'),
     path('logout/', auth_views.LogoutView.as_view(), name='logout'),
     path('privacy-policy', views.privacy, name='privacy-policy'),
-    path('terms-condition', views.terms, name='terms-condition')
+    path('terms-condition', views.terms, name='terms-condition'),
+    path('oauth/complete/facebook/', views.social_auth_complete, name='social_auth_complete'),
+
 ]

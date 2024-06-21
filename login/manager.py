@@ -1,49 +1,36 @@
-from django.contrib.auth.hashers import make_password
-from django.db import models
-from django.contrib.auth.models import (
-    BaseUserManager,
-    AbstractBaseUser,
-    PermissionsMixin,
-)
+from django.contrib.auth.models import BaseUserManager
 from django.utils.translation import gettext_lazy as _
 
-
-"""This model is represented Handle Users"""
-
-
 class CustomUserManager(BaseUserManager):
-    def create_user(self, email, password, **extra_fields):
+    def create_user(self, email=None, password=None, **extra_fields):
         """
         Create and save a User with the given email and password.
         """
         if not email:
-            raise ValueError("Users must have an email address")
+            raise ValueError(_('The Email field must be set'))
+        
         email = self.normalize_email(email)
         user = self.model(email=email, **extra_fields)
-        user.password = password
-        user.save()
+        
+        if password:
+            user.set_password(password)
+        else:
+            # Handle case where no password is provided (e.g., social auth)
+            pass
+        
+        user.save(using=self._db)
         return user
 
     def create_staffuser(self, email, password):
         """
-        Creates and saves a staff user1 with the given email and password.
+        Create and save a staff user with the given email and password.
         """
-        user = self.create_user(email, password=password)
-        user.is_staff = True
-        user.save(using=self._db)
+        user = self.create_user(email, password=password, is_staff=True)
         return user
 
     def create_superuser(self, email, password):
         """
-        Creates and saves a superuser with the given email and password.
+        Create and save a superuser with the given email and password.
         """
-        user = self.create_user(
-            email,
-            password=password,
-        )
-        user.is_staff = True
-        user.is_admin = True
-        user.is_superuser = True
-        user.role = "superuser"
-        user.save(using=self._db)
+        user = self.create_user(email, password=password, is_staff=True, is_superuser=True)
         return user
